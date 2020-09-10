@@ -1,0 +1,21 @@
+{
+  "name": "project_2",
+  "version": "1.0.0",
+  "description": "## Description  Drinkology was created to allow users to look up cocktail receipes and master the art of mixology in the comfort of their own home. Members are able to sign in and save receipes to their account and add comments to the blog.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mayorgak/project_2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mayorgak/project_2/issues"
+  },
+  "homepage": "https://github.com/Mayorgak/project_2#readme"
+}
