@@ -20,6 +20,11 @@ SO THAT I can have a place to get inspired, store my drink receipes and leave co
 
 ## Technologies Used 
 
+* Node.js
+* Express
+* Handlebars
+
+
 
 
 ---
@@ -34,13 +39,6 @@ SO THAT I can have a place to get inspired, store my drink receipes and leave co
 ```bash
   npm install 
   ```
-
----
-
-## API Reference 
-
-https://apilist.fun/api/the-cocktail-db
-
 
 
 
