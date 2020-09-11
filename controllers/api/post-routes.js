@@ -33,7 +33,7 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
     try{
-        const postData = await Post. update(
+        const postData = await Post.update(
             {
                 title: req.body.title
             },
