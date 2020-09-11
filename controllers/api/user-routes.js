@@ -6,7 +6,9 @@ router.get('/', async (req, res) => {
     try{
         const userData = await User.findAll(
             {
-                attributes: {exclude: ['password']}
+                attributes: {
+                    exclude: ['password']
+                }
             }
         );
         res.json({message: 'Getting all data!'});
@@ -20,7 +22,9 @@ router.get('/:id', async (req, res) => {
     try{
         const userData = await User.findOne(
             {
-                attributes: {exclude: ['password']},
+                attributes: {
+                    exclude: ['password']
+                },
                 where: req.params
             }
         );
@@ -85,7 +89,7 @@ router.delete('/:id', async (req, res) => {
         const userData = await User.destroy({
             where: req.params
         });
-        res.json({message: 'Deleted!'});\
+        res.json({message: 'Deleted!'});
         res.json(userData);
     } catch (err) {
         res.status(500).json(err)
