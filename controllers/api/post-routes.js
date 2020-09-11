@@ -16,6 +16,7 @@ router.get('/:id', async (req, res) => {
         const postData = await Post.findOne({
             where: req.params
         });
+
         res.json(postData);
     } catch(err) {
         res.status(500).json(err)
@@ -24,7 +25,14 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try{
-        const postData = await Post.create(req.body);
+        const postData = await Post.create(
+            {
+                title: req.body.title,
+                post_url: req.body.post_url,
+                user_id: req.body.user_id
+            }
+        );
+
         res.json(postData);
     } catch (err) {
         res.status(500).json(err)
@@ -56,7 +64,7 @@ router.delete('/:id', async (req, res) => {
             }
         );
 
-        res.json({message: `Post ID ${req.params.id} has been deleted!`});
+        res.json(postData);
     } catch (err) {
         res.status(500).json(err)
     }
