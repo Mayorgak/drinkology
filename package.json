@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Mayorgak/project_2#readme",
   "dependencies": {
+    "axios": "^0.20.0",
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.1",
     "dotenv": "^8.2.0",
