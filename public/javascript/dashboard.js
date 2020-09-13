@@ -10,6 +10,7 @@ const searchHandler = async function (event) {
   const res = await fetch(`/api/search/${drinkName}`);
   const drinks = await res.json()
   console.log(drinks);
+
   drinks.forEach(drinkObject => {
       const ptag = document.createElement("p")
        ptag.textContent = drinkObject.strDrink;
