@@ -11,7 +11,6 @@ router.get('/', async (req, res) => {
                 }
             }
         );
-        res.json({message: 'Getting all data!'});
         res.json(userData);
     } catch (err) {
         res.status(500).json(err)
@@ -28,7 +27,6 @@ router.get('/:id', async (req, res) => {
                 where: req.params
             }
         );
-        res.json({message: 'Find by ID!'});
         res.json(userData);
     } catch (err) {
         res.status(500).json(err)
@@ -37,8 +35,13 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const userData = await User.create(req.body);
-        res.json({message: 'New user data!'})
+        const userData = await User.create(
+            {
+                username: req.body.username,
+                email: req.body.email,
+                password: req.body.password
+            }
+        );
         res.json(userData);
     } catch (err) {
         res.status(500).json(err);
@@ -47,6 +50,7 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     try{
+        // Find the user in the DB
         const userData = await User.findOne(
             {
                 where: {
@@ -54,31 +58,73 @@ router.post('/login', async (req, res) => {
                 }
             }
         );
-        res.json({message: 'Found user info!'});
+        // If not in DB the notify user
+        if (!userData) {
+            req.status(400).json(
+                {
+                    message: 'No user with that email address!'
+                }
+            );
+            return;
+        }
+
+        req.session.user_id = userData.id;
+        req.session.username = userData.username;
+        req.session.loggedIn = true;
+        // If user found then save info into session cookie and set user to loggedIn
+        req.session.save(() => {
+            res.json(
+                {
+                    user: userData,
+                    message: 'You are now logged in!'
+                }
+            );
+        });
+        // JSON the userData
         res.json(userData);
+
     } catch (err){
         res.status(500).json(err);
     }
 });
 
-router.post('/logout', async (req, res) =>{
-    try {
-        if (req.session.loggedIn) {
-            req.session.destroy(() => {
-              res.status(204).end();
-            });
-          }
-          else {
-            res.status(404).end();
-          }
-    } catch (err) {
-        res.status(500).json(err)
-    }
+router.post('/logout', (req, res) =>{
+    if (req.session.loggedIn) {
+        res.json(
+            {
+                message: 'Logging out..'
+            }
+        );
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+        }
+        else {
+        res.status(404).end();
+        }
 });
 
 router.put('/:id', async (req, res) => {
     try{
-        res.json({message: 'Updated!'});
+        // Find User To Update In DB
+        const userData = await User.update(
+            req.body,
+            {
+                individualHooks: true,
+                where: {
+                    id: req.params.id
+                }
+            }
+        );
+        // If User Not Found
+        if (!userData) {
+            // Notify
+            res.status(404).json({ message: 'No user found with this id' });
+            return;
+        } else {
+            // Else Print User Data
+            res.json(userData);
+        }
     } catch (err) {
         res.status(500).json(err)
     }
@@ -86,11 +132,17 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
     try{
+        // Find User To Delete From DB
         const userData = await User.destroy({
             where: req.params
         });
-        res.json({message: 'Deleted!'});
-        res.json(userData);
+
+        if (!userData) {
+            res.status(404).json({ message: 'No user found with this id' });
+            return;
+        } else {
+            res.json(userData);
+        }
     } catch (err) {
         res.status(500).json(err)
     }

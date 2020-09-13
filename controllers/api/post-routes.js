@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const Post = require('../../model/Post');
+const withAuth = require('../../utils/authorization');
 
 router.get('/', async (req, res) => {
     try{
@@ -16,22 +17,30 @@ router.get('/:id', async (req, res) => {
         const postData = await Post.findOne({
             where: req.params
         });
+
         res.json(postData);
     } catch(err) {
         res.status(500).json(err)
     }
 })
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try{
-        const postData = await Post.create(req.body);
+        const postData = await Post.create(
+            {
+                title: req.body.title,
+                post_url: req.body.post_url,
+                user_id: req.body.user_id
+            }
+        );
+
         res.json(postData);
     } catch (err) {
         res.status(500).json(err)
     }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try{
         const postData = await Post.update(
             {
@@ -48,7 +57,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try{
         const postData = await Post.destroy(
             {
@@ -56,7 +65,7 @@ router.delete('/:id', async (req, res) => {
             }
         );
 
-        res.json({message: `Post ID ${req.params.id} has been deleted!`});
+        res.json(postData);
     } catch (err) {
         res.status(500).json(err)
     }
