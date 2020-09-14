@@ -13,6 +13,7 @@ const searchHandler = async function (event) {
     }
   });
   const drinks = await res.json()
+  document.location.reload();
   // drinks.forEach(drinkObject => {
   //     const ptag = document.createElement("p")
   //      ptag.textContent = drinkObject.strDrink;
