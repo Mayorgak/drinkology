@@ -11,32 +11,33 @@
 </head>
 
 <body>
-  <div class="wrapper">
+  <div>
   <header>
     <h1>
-      <a href="/">Drinkology</a>
+      <a class="title" href="/">Drinkology</a>
     </h1>
     <nav>
       {{#if loggedIn}}
       <a href="/dashboard">dashboard</a>
-      <button id="logout" class="btn-no-style">logout</button>
+      <a id="logout" class="btn-no-style">logout</a>
       {{else}}
       <a href="/login">login</a>
       {{/if}}
     </nav>
     
   </header>
-    <main>
+    <main class="content">
       {{{ body }}}
     </main>
-    <footer>
+    <footer class="footer">
       Thanks for visiting!
     </footer>
   </div>
+
 {{#if loggedIn}}
 <script src="/javascript/logout.js"></script>
-
 {{/if}}
+
 <script src="/javascript/dashboard.js"></script>
 </body>
 
