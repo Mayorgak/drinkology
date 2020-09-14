@@ -2,5 +2,20 @@
     <input id="drink-search"> <button id="search-button">Search</button>
     <div id="search-results">
 
+{{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-details post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+{{!-- <script src="/javascript/add-post.js"></script> --}}
     </div>
 </div>
