@@ -1,0 +1,87 @@
+
+body{
+	margin:0;
+  background-color: #efefef;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+header {
+	font-size: 20px;
+	background-color: black;
+	color: #cccccc;
+	height: 75px;
+}
+#topbar{
+	width:75%;
+	margin-left: auto ;
+    margin-right: auto ;
+}
+nav {
+	display: inline;
+  padding-right: 30px;
+  float: right;
+}
+
+nav a {
+  padding: 0px 10px 10px 10px;
+  border: #225ca3 1px solid;
+}
+
+.title {
+	float:left;
+	font-size:30px;
+	padding-left:20px;
+	padding-top:20px;
+}
+
+button {
+  background-color: #225ca3;
+  border: 0;
+  padding: 1%;
+  color: white;
+  font-weight: bold;
+  transition: background-color .1s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #3486eb;
+}
+
+/* this is what will hold the post*/
+.box{
+	margin-top: 20px;
+	width:75%;
+	margin-left: auto ;
+    margin-right: auto ;
+    height: 400px;
+}
+
+.post{
+	margin-top:20px;
+	float:left;
+}
+.heading{
+	font-size: 36px;
+	margin-bottom:20px;
+}
+/* .sidebar{
+	float:right;
+} */
+
+footer{	
+	color: white;	
+	margin-left: auto ;    
+	margin-right: auto ;	
+	font-size:16px;	
+	min-height: 50px;	
+	padding:20px;	
+  background-color: black;	
+  flex-shrink: 0;
+}
