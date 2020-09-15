@@ -7,15 +7,14 @@ router.get("/", (req, res) => {
 
 
 router.get("/login", (req, res) => {
-  
-
-  res.render("login");
+  res.render("login", {
+    style : "login.css"
+  }
+);
 });
 
 router.get("/signup", (req, res) => {
-  
-
-  res.render("signup");
+    res.render("signup");
 });
 
 

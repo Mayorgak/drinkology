@@ -93,14 +93,15 @@ body {
   
 }
 
-.title{
+.title {
   text-decoration: none;
 }
 
 
 h1 {
 	font-family: 'Fjalla One', sans-serif;
-	color:black;
+	color: #2E8B57;
+;
 }
 
 a , .title , #login , #copright ,#copyright {
@@ -109,7 +110,7 @@ a , .title , #login , #copright ,#copyright {
 	
 }
 
-	
+
 .jumbotron {
 		 background-image: url('../images/cocktails.jpeg');
 		 background-size: cover;
@@ -138,39 +139,6 @@ footer {
 }
 
 
-
-@media (max-width: 768px) {
-  h1 {
-	font-size :40px;
-}
-}
-@media (max-width: 576px) {
-  
-h1 {
-	font-size :40px;
-}
-.jumbotron {
-		 background-image: url('../images/cocktails.jpeg');
-		 background-size: cover;
-		 position: absolute;
-  		 
-
-  
-}
-}
-
-@media (max-width: 375px) {
-  
-h1 {
-	
-	font-size: 40px !important;
-}
-.jumbotron {
-		 background-image: url('../images/cocktails.jpeg');
-		 background-size: cover;
-		 position: absolute;
-}
-}
 	
 @media only screen and (max-width: 600px) {
   h1 {

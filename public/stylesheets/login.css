@@ -1,0 +1,179 @@
+/* login page style */
+/* 
+.login-page { */
+		/* background :#eee; 
+		background-image : url(../images/cocktails.jpeg);
+		background-size: cover;
+		/* position: absolute; */
+		/* top:0px;
+  		left:0px;
+  		width: 100%;
+  		height: 100%; 
+
+		}  */
+
+		
+/* .wrapper {
+		margin: 80px;	
+		}
+		
+#login-form {
+	opacity: 90%;
+}
+
+ .form-signin {
+            max-width: 380px;
+            margin: 0 auto; 
+			background-color: #fff;
+		    padding: 15px 40px 50px ;
+            border: 1px solid #e5e5e5; 
+			border-radius: 10px; 
+		
+        }
+ .form-signin, .form-signin-heading,  .form-signin {
+        margin-bottom: 30px;
+
+	}
+	
+input, button, #search-button {
+		 border-radius: 10px;
+		 
+		 
+	}
+
+
+/* Dashboard style */
+
+/* .dashboard-wrapper{
+	padding-top: 50%;
+
+}
+
+@media (max-width: 768px) {
+  h1 {
+	font-size :40px;
+}
+}
+@media (max-width: 576px) {
+  
+h1 {
+	font-size :40px;
+}
+.jumbotron {
+		 background-image: url('../images/cocktails.jpeg');
+		 background-size: cover;
+		 position: absolute;
+  		 
+}
+}
+
+@media (max-width: 375px) {
+  
+h1 {
+	
+	font-size: 40px !important;
+}
+.jumbotron {
+		 background-image: url('../images/cocktails.jpeg');
+		 background-size: cover;
+		 position: absolute;
+}
+}   */
+
+
+* {
+	margin: 0;
+	padding: 0;
+	user-select :none;
+}
+
+body {
+	background :#e9eaea;
+	font-family: "roboto", sans-serif;
+	background-image: url(../images/cocktails.jpeg)
+}
+
+.container {
+	width : 450px;
+	margin: 70px auto;
+}
+
+.signup,
+.login {
+	width :50%;
+	background : #fff;
+	height : 60px;
+	float: left; 
+	text-align : center;
+	line-height: 60px;
+	cursor: pointer;
+	text-transform: uppercase;
+
+
+}
+
+.signup-form ,
+.login-form 
+{
+  background: #fff;
+  padding: 40px;
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+  height: 400px;
+  opacity: 90%;
+}
+
+.input{
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border: 2px solid #e9eaea;
+  color: #3e3e40;
+  font-size: 14px;
+  outline: none;
+  transform: all 0.5s ease;
+}
+
+input:focus{
+  border: 2px solid #34b3a0;
+}
+
+.btn{
+  width: 100%;
+  background: #34b3a0;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #3e3e40;
+  font-family: roboto;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #3e3e40;
+  font-family: roboto;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #3e3e40;
+  font-family: roboto;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #3e3e40;
+  font-family: roboto;
+}
+
+
+
+
+
+
