@@ -2,22 +2,13 @@
 
 <div class="dashboard-wrapper">
     <input id="drink-search"> <button id="search-button">Search</button>
+    {{!-- {{#if drinks.length}}
     <div id="search-results">
-
-{{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-details post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}}
-
-{{!-- <script src="/javascript/add-post.js"></script> --}}
+            {{#each drinks as |drink|}}
+                {{> post-details}}
+            {{/each}}
     </div>
+    {{/if}} --}}
 </div>
+
+<script src="/javascript/dashboard.js"></script>
