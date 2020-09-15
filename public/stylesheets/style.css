@@ -1,4 +1,4 @@
-
+/* 
 body{
 	margin:0;
   background-color: #efefef;
@@ -74,7 +74,7 @@ button:hover {
 /* .sidebar{
 	float:right;
 } */
-
+/* 
 footer{	
 	color: white;	
 	margin-left: auto ;    
@@ -84,4 +84,106 @@ footer{
 	padding:20px;	
   background-color: black;	
   flex-shrink: 0;
+} */ */
+
+/* Main page */
+
+body {
+  padding-top: 3.5 rem;
+  
+}
+
+.title{
+  text-decoration: none;
+}
+
+
+h1 {
+	font-family: 'Fjalla One', sans-serif;
+	color:black;
+}
+
+a , .title , #login , #copright ,#copyright {
+	color: #2F4F4F;
+	text-decoration: none;
+	
+}
+
+	
+.jumbotron {
+		 background-image: url('../images/cocktails.jpeg');
+		 background-size: cover;
+		 position: absolute;
+  		 top:0px;
+  		 left:0px;
+  		 width: 100%;
+  		 height: 100%;
+		 opacity: 85%;
+	
+		 
+		
+	}
+
+.container{
+	padding-top: 30%;
+	
+
+	
+}
+
+footer {
+	width: 100%;
+	height: 10%;
+	background-color: #F8F8FF;
+}
+
+
+
+@media (max-width: 768px) {
+  h1 {
+	font-size :40px;
+}
+}
+@media (max-width: 576px) {
+  
+h1 {
+	font-size :40px;
+}
+.jumbotron {
+		 background-image: url('../images/cocktails.jpeg');
+		 background-size: cover;
+		 position: absolute;
+  		 
+
+  
+}
+}
+
+@media (max-width: 375px) {
+  
+h1 {
+	
+	font-size: 40px !important;
+}
+.jumbotron {
+		 background-image: url('../images/cocktails.jpeg');
+		 background-size: cover;
+		 position: absolute;
+}
+}
+	
+@media only screen and (max-width: 600px) {
+  h1 {
+	font-size: 30px !important;
+
+  }
+  
+  .jumbotron {
+		 background-image: url('../images/cocktails.jpeg');
+		 background-size: cover;
+}
+}
+.card-img-container {
+    width: 200px;
+    height: 200px;
 }
