@@ -1,0 +1,21 @@
+{{#each drinkData}}
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4 card-img-container">
+            <img src="{{strDrinkThumb}}/preview" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+          <div class="card-header">
+            <h5 class="card-title">{{strDrink}}</h5>
+            <p class="card-text">{{strCategory}}
+              <span class="badge badge-danger">{{strAlcoholic}}</span>
+            </p>
+          </div>
+            <div class="card-body">
+              <p class="card-text">{{strInstructions}}</p>
+              <p class="card-text"><small class="text-muted">Date</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+{{/each}}

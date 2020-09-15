@@ -1,6 +1,10 @@
-<div>
+
+
+<div class="dashboard-wrapper">
     <input id="drink-search"> <button id="search-button">Search</button>
+    {{!-- {{#if drinks.length}}
     <div id="search-results">
+<<<<<<< HEAD
 
 {{#if posts.length}}
 <section>
@@ -17,5 +21,13 @@
 {{/if}}
 
 {{!-- <script src="/javascript/add-post.js"></script> --}}
+=======
+            {{#each drinks as |drink|}}
+                {{> post-details}}
+            {{/each}}
+>>>>>>> ab6db2eab009b0e33cfd54066d4550900162a901
     </div>
+    {{/if}} --}}
 </div>
+
+<script src="/javascript/dashboard.js"></script>
