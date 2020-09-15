@@ -1,5 +1,4 @@
-/* 
-body{
+/* body{
 	margin:0;
   background-color: #efefef;
   height: 100%;
@@ -16,6 +15,7 @@ header {
 	color: #cccccc;
 	height: 75px;
 }
+
 #topbar{
 	width:75%;
 	margin-left: auto ;
@@ -55,6 +55,12 @@ button:hover {
 }
 
 /* this is what will hold the post*/
+header {
+	font-size: 20px;
+	color: #cccccc;
+	height: 75px;
+}
+
 .box{
 	margin-top: 20px;
 	width:75%;
@@ -67,6 +73,7 @@ button:hover {
 	margin-top:20px;
 	float:left;
 }
+
 .heading{
 	font-size: 36px;
 	margin-bottom:20px;
@@ -111,24 +118,18 @@ a , .title , #login , #copright ,#copyright {
 
 	
 .jumbotron {
-		 background-image: url('../images/cocktails.jpeg');
-		 background-size: cover;
-		 position: absolute;
-  		 top:0px;
-  		 left:0px;
-  		 width: 100%;
-  		 height: 100%;
-		 opacity: 85%;
-	
-		 
-		
-	}
+	background-image: url('../images/cocktails.jpeg');
+	background-size: cover;
+	position: absolute;
+	top:0px;
+	left:0px;
+	width: 100%;
+	height: 100%;
+	opacity: 85%;
+}
 
 .container{
 	padding-top: 30%;
-	
-
-	
 }
 
 footer {
@@ -145,45 +146,34 @@ footer {
 }
 }
 @media (max-width: 576px) {
-  
-h1 {
-	font-size :40px;
-}
-.jumbotron {
-		 background-image: url('../images/cocktails.jpeg');
-		 background-size: cover;
-		 position: absolute;
-  		 
-
-  
-}
+	h1 {
+		font-size :40px;
+	}
+	.jumbotron {
+			background-image: url('../images/cocktails.jpeg');
+			background-size: cover;
+			position: absolute;
+	}
 }
 
 @media (max-width: 375px) {
-  
-h1 {
-	
-	font-size: 40px !important;
-}
-.jumbotron {
-		 background-image: url('../images/cocktails.jpeg');
-		 background-size: cover;
-		 position: absolute;
-}
+	h1 {
+		font-size: 40px !important;
+	}
+	.jumbotron {
+			background-image: url('../images/cocktails.jpeg');
+			background-size: cover;
+			position: absolute;
+	}
 }
 	
 @media only screen and (max-width: 600px) {
   h1 {
 	font-size: 30px !important;
-
   }
   
   .jumbotron {
 		 background-image: url('../images/cocktails.jpeg');
 		 background-size: cover;
-}
-}
-.card-img-container {
-    width: 200px;
-    height: 200px;
+	}
 }
