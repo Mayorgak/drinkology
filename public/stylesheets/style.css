@@ -1,3 +1,10 @@
+header {
+	font-size: 20px;
+	background-color: black;
+	color: #cccccc;
+	height: 75px;
+}
+
 /* 
 body{
 	margin:0;
@@ -7,20 +14,12 @@ body{
   flex-direction: column;
 }
 
-.content {
-  flex: 1 0 auto;
-}
-header {
-	font-size: 20px;
-	background-color: black;
-	color: #cccccc;
-	height: 75px;
-}
 #topbar{
 	width:75%;
 	margin-left: auto ;
     margin-right: auto ;
 }
+
 nav {
 	display: inline;
   padding-right: 30px;
@@ -71,10 +70,11 @@ button:hover {
 	font-size: 36px;
 	margin-bottom:20px;
 }
+
 /* .sidebar{
 	float:right;
-} */
-/* 
+} 
+
 footer{	
 	color: white;	
 	margin-left: auto ;    
@@ -84,19 +84,25 @@ footer{
 	padding:20px;	
   background-color: black;	
   flex-shrink: 0;
-} */ */
+} */
 
 /* Main page */
 
-body {
-  padding-top: 3.5 rem;
-  
+body{
+	margin:0;
+  background-color: #efefef;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .title{
   text-decoration: none;
 }
 
+.content {
+  flex: 1 0 auto;
+}
 
 h1 {
 	font-family: 'Fjalla One', sans-serif;
@@ -106,9 +112,7 @@ h1 {
 a , .title , #login , #copright ,#copyright {
 	color: #2F4F4F;
 	text-decoration: none;
-	
 }
-
 	
 .jumbotron {
 		 background-image: url('../images/cocktails.jpeg');
@@ -119,16 +123,10 @@ a , .title , #login , #copright ,#copyright {
   		 width: 100%;
   		 height: 100%;
 		 opacity: 85%;
-	
-		 
-		
-	}
+}
 
 .container{
 	padding-top: 30%;
-	
-
-	
 }
 
 footer {
@@ -137,13 +135,12 @@ footer {
 	background-color: #F8F8FF;
 }
 
-
-
 @media (max-width: 768px) {
   h1 {
-	font-size :40px;
+  font-size :40px;
+  }
 }
-}
+
 @media (max-width: 576px) {
   
 h1 {
@@ -153,36 +150,30 @@ h1 {
 		 background-image: url('../images/cocktails.jpeg');
 		 background-size: cover;
 		 position: absolute;
-  		 
-
-  
-}
+    }
 }
 
-@media (max-width: 375px) {
-  
+@media (max-width: 375px) { 
 h1 {
-	
 	font-size: 40px !important;
-}
+  }
 .jumbotron {
 		 background-image: url('../images/cocktails.jpeg');
 		 background-size: cover;
 		 position: absolute;
-}
+  }
 }
 	
 @media only screen and (max-width: 600px) {
   h1 {
 	font-size: 30px !important;
-
   }
-  
   .jumbotron {
 		 background-image: url('../images/cocktails.jpeg');
 		 background-size: cover;
+    }
 }
-}
+
 .card-img-container {
     width: 200px;
     height: 200px;
