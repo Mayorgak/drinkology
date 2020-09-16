@@ -68,7 +68,7 @@ router.post('/login', async (req, res) => {
             return;
         }
 
-         const validPassword = dbUserData.checkPassword(req.body.password);
+         const validPassword = userData.checkPassword(req.body.password);
 
          if (!validPassword) {
            res.status(400).json({ message: "Incorrect password!" });
@@ -91,6 +91,7 @@ router.post('/login', async (req, res) => {
         res.json(userData);
 
     } catch (err){
+        console.log(err)
         res.status(500).json(err);
     }
 });
