@@ -54,7 +54,7 @@ router.post('/login', async (req, res) => {
         const userData = await User.findOne(
             {
                 where: {
-                    email: req.body.email
+                    username: req.body.username
                 }
             }
         );
@@ -62,7 +62,7 @@ router.post('/login', async (req, res) => {
         if (!userData) {
             req.status(400).json(
                 {
-                    message: 'No user with that email address!'
+                    message: 'No user with that username!'
                 }
             );
             return;

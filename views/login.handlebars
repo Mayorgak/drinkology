@@ -1,25 +1,37 @@
 
 
 <link rel="stylesheet" href="stylesheets/{{style}}">
-<body  class="login-page">
-<div class="wrapper">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script>
+  
+   /*$(document).ready(function(){
+     $(".login-form").hide();
+     $(".login").css("background","none");
+   
+  
+  });
 
- <div class="container">
+</script>
+
+<body  class="login-page">
+ <div class="form-container">
 
    <div class="signup">sign up</div>
    <div class="login">log in</div>
   
+
     <div class="signup-form">
-      <input type="text"  id="username-signup" placeholder="Your Email Address" class="input">  <br>
+      <input type="text"  id="username-signup" placeholder="Your Email Address" class="input"> <br>
       <input type="text"  id="password-signup" placeholder="Username" class="input"><br>
       <input type="password"  id="email-signup" placeholder="Password" class="input"><br>
-      <div type="submit" class="btn">Create Account</div><br>
+      <button type="submit" class="btn">Create Account</button><br>
     </div>
 
-    <div class="login-form">
+
+    <div class="login-form" id="login-form">
      <input type="text"  id="username-input-login" placeholder="Username" class="input"><br>
      <input type="password"  id="password-input-login" placeholder="Password" class="input"><br>
-    <div class="btn" type="submit" id="login-btn" >log in</div><br>
+    <button class="btn" type="submit" id="login-btn"> log in</button><br>
     </div>
 
  </div>

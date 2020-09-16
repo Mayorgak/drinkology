@@ -1,20 +1,14 @@
-<div class="dashboard-wrapper"></div>
-    <input id="drink-search"> <button id="search-button">Search</button>
-
-{{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}}
-
+<link rel="stylesheet" href="stylesheets/{{style}}">
+<div class="form-inline d-flex justify-content-center md-form form-sm"></div>
+    <input class="form-control form-control-sm mr-3 w-75" id="drink-search"> 
+    <button  class="btn btn-default" id="search-button">Search</button>
 </div>
 
+<form class="form-inline active-pink-3 active-pink-4">
+  <i class="fas fa-search" aria-hidden="true"></i>
+  <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+    aria-label="Search">
+</form>
+
 <script src="/javascript/dashboard.js"></script>
+
