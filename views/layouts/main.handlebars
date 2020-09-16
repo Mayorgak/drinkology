@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drinkology</title>
+ 
 
   {{#each css}}
         <link rel="stylesheet" href="/stylesheets/style.css">
@@ -19,11 +20,10 @@
   <div>
   <header>
   <!--Navbar -->
-    <nav class="navbar navbar-light fixed-top" style="background-color: #F8F8FF;">
+    <nav class="navbar navbar-light fixed-top" style="background-color: #2F4F4F;">
       <h1> 
       <a class="title" href="/">Drinkology</a>
     </h1>
-
       {{#if loggedIn}}
       <a href="/dashboard">dashboard</a>
       <a id="logout" href="/logout" class="btn-no-style">logout</a>
@@ -46,8 +46,6 @@
   {{#if loggedIn}}    
   <script src="/javascript/logout.js"></script>
   {{/if}}
-
-<script src="/javascript/dashboard.js"></script>
 </body>
 
 </html>

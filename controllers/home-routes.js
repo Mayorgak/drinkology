@@ -8,9 +8,8 @@ router.get("/", (req, res) => {
 
 router.get("/login", (req, res) => {
   res.render("login", {
-    style : "login.css"
-  }
-);
+    style: "login.css",
+  });
 });
 
 router.get("/signup", (req, res) => {
