@@ -6,11 +6,7 @@ const searchHandler = async function (event) {
   // Takes the value of the searched drink
   const drinkName = drinkInputEL.value;
   // Appends to URL which executes API call
-  window.location = `/search/${drinkName}`
-
-  // const res = await fetch(`/api/search/${drinkName}`);
-  // const drinks = await res.json()
-  
+  window.location = `/search/${drinkName}`  
 };
 
 searchBtn.addEventListener("click",searchHandler);
