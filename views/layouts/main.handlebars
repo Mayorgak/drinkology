@@ -19,12 +19,10 @@
   <div>
   <header>
   <!--Navbar -->
-  {{#if homepage}}
     <nav class="navbar navbar-light fixed-top" style="background-color: #F8F8FF;">
       <h1> 
       <a class="title" href="/">Drinkology</a>
     </h1>
-
       {{#if loggedIn}}
       <a href="/dashboard">dashboard</a>
       <a id="logout" href="/logout" class="btn-no-style">logout</a>
@@ -32,7 +30,6 @@
       <a id="login" href="/login">login</a>
       {{/if}}
       </nav>
-        {{/if}}
   </header>
 
     <main class="content">

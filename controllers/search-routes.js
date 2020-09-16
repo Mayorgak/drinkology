@@ -1,7 +1,5 @@
 const router = require("express").Router();
 const axios = require("axios");
-const Drinks = require('../model/Drinks');
-const createDrink = require('../utils/addDrink');
 
 router.get('/:drink', async (req, res) => {
     console.log("searching for " + req.params.drink);
@@ -11,7 +9,7 @@ router.get('/:drink', async (req, res) => {
         // Store response of search in a semantic variable
         const drinkData = drinkResponse.data.drinks;
         // Render the post-details handlebars using the data of the drink searched
-        res.render('post-details', {
+        res.render('search-results', {
             drinkData,
             loggedIn: true
         })
