@@ -1,3 +1,5 @@
+const loginBtn = document.querySelector("#login-btn");
+
 const loginFormHandler = async function (event) {
     event.preventDefault();
   
@@ -12,7 +14,7 @@ const loginFormHandler = async function (event) {
       headers: { "Content-Type": "application/json" },
     })
       .then(function () {
-        document.location.replace("/dashboard");
+        window.location = "/dashboard";
       })
       .catch((err) => console.log(err));
   };

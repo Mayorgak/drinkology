@@ -52,7 +52,19 @@ footer {
 	background-color: #2F4F4F;
 }
 
+#user-review {
+	outline: none;
+	padding: 3px 0px 3px 3px;
+	margin: 5px 1px 3px 0px;
+	border: 1px solid #DDDDDD;
+}
 
+#user-review:focus {
+	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+	padding: 3px 0px 3px 3px;
+	margin: 5px 1px 3px 0px;
+	border: 1px solid rgba(81, 203, 238, 1);
+}
 
 @media (max-width: 768px) {
   h3 {

@@ -1,0 +1,84 @@
+<div class="container justify-content-center pt-0 mt-2">
+    <h1 class="text-center">Review Title</h3>
+    <div class="d-flex justify-content-center mb-2">
+        <input type="text" class="w-50 mx-auto" id="review-title">
+    </div>
+    <h1 class="text-center">Your Selected Drink</h3>
+{{!-- prints a card for each drink --}}
+    {{#each drink}}
+        <div class="card mb-3" id="drink-container" data-drinkid="{{idDrink}}">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="{{strDrinkThumb}}/preview" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-header">
+                        <h3 class="card-title">{{strDrink}}</h3>
+                        <h5 class="card-text">{{strCategory}}
+                            <span class="badge badge-danger">{{strAlcoholic}}</span>
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <h6>Instructions</h6>
+                        <p class="card-text">{{strInstructions}}</p>
+                        <h6>Ingredients</h6>
+                        <ul>
+                            {{#if strIngredient1}}
+                            <li>{{#if strMeasure1}}{{strMeasure1}}{{/if}}{{strIngredient1}}</li>
+                            {{/if}}
+                            {{#if strIngredient2}}
+                            <li>{{#if strMeasure2}}{{strMeasure2}}{{/if}}{{strIngredient2}}</li>
+                            {{/if}}
+                            {{#if strIngredient3}}
+                            <li>{{#if strMeasure3}}{{strMeasure3}}{{/if}}{{strIngredient3}}</li>
+                            {{/if}}
+                            {{#if strIngredient4}}
+                            <li>{{#if strMeasure4}}{{strMeasure4}}{{/if}}{{strIngredient4}}</li>
+                            {{/if}}
+                            {{#if strIngredient5}}
+                            <li>{{#if strMeasure5}}{{strMeasure5}}{{/if}}{{strIngredient5}}</li>
+                            {{/if}}
+                            {{#if strIngredient6}}
+                            <li>{{#if strMeasure6}}{{strMeasure6}}{{/if}}{{strIngredient6}}</li>
+                            {{/if}}
+                            {{#if strIngredient7}}
+                            <li>{{#if strMeasure7}}{{strMeasure7}}{{/if}}{{strIngredient7}}</li>
+                            {{/if}}
+                            {{#if strIngredient8}}
+                            <li>{{#if strMeasure8}}{{strMeasure8}}{{/if}}{{strIngredient8}}</li>
+                            {{/if}}
+                            {{#if strIngredient9}}
+                            <li>{{#if strMeasure9}}{{strMeasure9}}{{/if}}{{strIngredient9}}</li>
+                            {{/if}}
+                            {{#if strIngredient10}}
+                            <li>{{#if strMeasure10}}{{strMeasure10}}{{/if}}{{strIngredient10}}</li>
+                            {{/if}}
+                            {{#if strIngredient11}}
+                            <li>{{#if strMeasure11}}{{strMeasure11}}{{/if}}{{strIngredient11}}</li>
+                            {{/if}}
+                            {{#if strIngredient12}}
+                            <li>{{#if strMeasure12}}{{strMeasure12}}{{/if}}{{strIngredient12}}</li>
+                            {{/if}}
+                            {{#if strIngredient13}}
+                            <li>{{#if strMeasure13}}{{strMeasure13}}{{/if}}{{strIngredient13}}</li>
+                            {{/if}}
+                            {{#if strIngredient14}}
+                            <li>{{#if strMeasure14}}{{strMeasure14}}{{/if}}{{strIngredient14}}</li>
+                            {{/if}}
+                            {{#if strIngredient15}}
+                            <li>{{#if strMeasure15}}{{strMeasure15}}{{/if}}{{strIngredient15}}</li>
+                            {{/if}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+{{!-- textarea --}}
+    <h1 class="text-center">Write Your Review</h3>
+    <textarea maxlength="500" name="user-review" id="user-review" cols="156" rows="5"></textarea>
+{{!-- Button To Submit Post --}}
+    <a href="#" class="btn btn-success justify-content-center" id="submit-review">Submit Your Review</a>
+</div>
+
+<script src="/javascript/new-post.js"></script>

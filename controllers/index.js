@@ -12,6 +12,9 @@ router.use('/dashboard', dashboardRoutes);
 const searchRoutes = require('./search-routes');
 router.use('/search', searchRoutes);
 
+const reviewRoute = require('./review');
+router.use('/review', reviewRoute);
+
 router.use((req, res) => {
   res.status(404).end();
 });

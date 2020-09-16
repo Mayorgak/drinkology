@@ -26,15 +26,30 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', withAuth, async (req, res) => {
     try{
-        const postData = await Post.create(
+        const {user_review, drink_id, review_title} = req.body;
+        const drinkData = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink_id}`);
+        const drink = drinkData.data.drinks[0];
+
+        const newPost = await Post.create(
             {
-                title: req.body.title,
-                post_url: req.body.post_url,
-                user_id: req.body.user_id
+                title: review_title,
+                review: user_review,
+                user_id: req.session.user_id,
+                drink_id: drink.idDrink,
+                drink_name: drink.strDrink,
+                alcohol_content: drink.strAlcoholic,
+                drink_instructions: drink.strInstructions,
+                drink_image: drink.strDrinkThumb,
+                drink_category: drink.strCategory
             }
         );
 
-        res.json(postData);
+        const getPostData = await Post.findAll();
+
+        res.render('dashboard', {
+            getPostData,
+            loggedIn: true
+        });
     } catch (err) {
         res.status(500).json(err)
     }
