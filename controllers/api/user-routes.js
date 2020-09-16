@@ -62,11 +62,18 @@ router.post('/login', async (req, res) => {
         if (!userData) {
             req.status(400).json(
                 {
-                    message: 'No user with that username!'
+                    message: 'No user account found!'
                 }
             );
             return;
         }
+
+         const validPassword = dbUserData.checkPassword(req.body.password);
+
+         if (!validPassword) {
+           res.status(400).json({ message: "Incorrect password!" });
+           return;
+         }
 
         req.session.user_id = userData.id;
         req.session.username = userData.username;
