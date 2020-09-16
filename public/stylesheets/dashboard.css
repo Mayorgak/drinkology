@@ -4,6 +4,10 @@
     background-image: url(../images/cocktail2.jpeg);
 }
 
+h1 {
+  color: #FFF5EE;
+}
+
 .dashboard-container {
 min-height: 100vh; 
 display: flex;

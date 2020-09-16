@@ -8,5 +8,5 @@ const searchHandler = async function (event) {
   // Appends to URL which executes API call
   window.location = `/search/${drinkName}`  
 };
-
+console.log(searchBtn);
 searchBtn.addEventListener("click",searchHandler);

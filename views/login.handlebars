@@ -1,35 +1,20 @@
 
 
 <link rel="stylesheet" href="stylesheets/{{style}}">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script>
-  
-   /*$(document).ready(function(){
-     $(".login-form").hide();
-     $(".login").css("background","none");
-     
-   
-  
-  });
-
-
-  
-
-</script>
 
 <body  class="login-page">
  <div class="form-container">
    <div class="box">
 
-   <div class="signup">sign up</div>
-   <div class="login">log in</div>
-  
+   
 
-    <div class="signup-form">
-      <input type="text"  id="username-signup" placeholder="Your Email Address" class="input"> <br>
-      <input type="text"  id="password-signup" placeholder="Username" class="input"><br>
-      <input type="password"  id="email-signup" placeholder="Password" class="input"><br>
-      <button type="submit" class="btn">Create Account</button><br>
+  
+    <div style=" display:none;" class="signup-form" id="signup-form">
+      <input type="text"  id="email-signup" placeholder="Your Email Address" class="input"> <br>
+      <input type="text"  id="username-signup" placeholder="Username" class="input"><br>
+      <input type="text"  id="password-signup" placeholder="Password" class="input"><br>
+      <button type="submit" class="btn" id="submit-btn">Create Account</button><br>
+       {{!-- <div  class="login" id="login-redirect">log in</div> --}}
     </div>
 
 
@@ -37,12 +22,19 @@
      <input type="text"  id="username-input-login" placeholder="Username" class="input"><br>
      <input type="password"  id="password-input-login" placeholder="Password" class="input"><br>
     <button class="btn" type="submit" id="login-btn"> log in</button><br>
-    </div>
 
+    <div class="signup" id="signup-btn">sign up</div>
+   
+    </div>
+     
 </div>
  </div>
  
 
 </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script src="/javascript/login.js"></script>
+<script src="/javascript/signup.js"></script>
+
 

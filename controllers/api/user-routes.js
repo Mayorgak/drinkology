@@ -34,6 +34,7 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+    console.log(req.body);
     try {
         const userData = await User.create(
             {
@@ -42,14 +43,17 @@ router.post('/', async (req, res) => {
                 password: req.body.password
             }
         );
+        console.log(userData);
         res.json(userData);
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
 
 router.post('/login', async (req, res) => {
     try{
+        console.log(req.body);
         // Find the user in the DB
         const userData = await User.findOne(
             {
@@ -80,6 +84,7 @@ router.post('/login', async (req, res) => {
         req.session.loggedIn = true;
         // If user found then save info into session cookie and set user to loggedIn
         req.session.save(() => {
+             console.log(userData);
             res.json(
                 {
                     user: userData,
@@ -87,6 +92,7 @@ router.post('/login', async (req, res) => {
                 }
             );
         });
+       
         // JSON the userData
         res.json(userData);
 

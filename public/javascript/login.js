@@ -2,7 +2,8 @@ const loginBtn = document.querySelector("#login-btn");
 
 const loginFormHandler = async function (event) {
     event.preventDefault();
-  
+
+    console.log("click");
     const usernameEl = document.querySelector("#username-input-login");
     const passwordEl = document.querySelector("#password-input-login");
     fetch("/api/user/login", {
@@ -20,6 +21,7 @@ const loginFormHandler = async function (event) {
   };
   
 
-  document
-    .querySelector("#login-form")
-    .addEventListener("submit", loginFormHandler);
+  // document
+  //   .querySelector("#login-form")
+    loginBtn.addEventListener("click", loginFormHandler);
+    
