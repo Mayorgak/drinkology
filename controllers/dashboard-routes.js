@@ -5,28 +5,28 @@ const router = require("express").Router();
 
 
 router.get("/", async (req, res) => {
+  console.log("get post:", req.session.user_id)
   const postData = await Post.findAll({
     where: {
       user_id: req.session.user_id
     },
-    attributes: [
-      'id',
-      'title',
-      'review',
-      'created_at'
-    ],
-    include: [
-      {
-        model: User,
-        attributes: ['username']
-      }
-    ]
-  });
+    // include: [
+    //   {
+    //     model: User,
+    //     attributes: ['username']
+    //   }
+    // ]
+  })
   console.log(postData);
-  res.render("dashboard", {
-    loggedIn: true,
-    style: "dashboard.css"
-  });
+
+  // if(postData.length > 0) {
+  //   console.log('No Post Data Found')
+  // } else {
+  //   res.render("dashboard", {
+  //     loggedIn: true,
+  //     style: "dashboard.css"
+  //   });
+  // }
 });
 
 module.exports = router;

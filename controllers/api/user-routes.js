@@ -43,11 +43,10 @@ router.post('/', async (req, res) => {
             }
         );
         const { id, username } = userData;
-        console.log(id);
-        console.log(username)
         req.session.user_id = id;
         req.session.username = username;
         req.session.loggedIn = true;
+        console.log("before redirect:", req.session)
         req.session.save(() => {
             res.json(
                 {

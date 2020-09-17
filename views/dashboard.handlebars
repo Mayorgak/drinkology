@@ -15,30 +15,6 @@
     </div>
   </section>
 <!-- Card section -->
-<div class="album py-5 bg-light">
-  <div class="container">
-
-    <div class="row row-col-2">
-      {{#if Post.length}}
-      {{#each Post}}
-      <div class="card">
-        {{!-- Card Image --}}
-        <div class="col-4 p-0">
-          <img src="{{strDrinkThumb}}/preview" class="card-img h-100" alt="...">
-        </div>
-        <div class="col-8">
-          {{!-- Card Header --}}
-          <div class="card-header text-left">
-            <h5 class="card-title">{{strDrink}}</h5>
-            <p>Review Created By</p>
-            <a href="/review?drinkid={{idDrink}}" class="btn btn-success" id="review-button">Write Review</a>
-          </div>
-        </div>
-      {{/each}}
-      {{/if}}
-    </div>
-  </div>
-</div>
 
 
 <script src="/javascript/dashboard.js"></script>
