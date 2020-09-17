@@ -41,8 +41,8 @@
 
 <!-- Card section -->
 {{#if posts.length}}
-<div class="d-flex py-5 bg-light justify-content-center" id="card-container">
-  <div class="row row-col-2">
+<div class="d-flex py-3 bg-light" id="card-container">
+  <div class="row justify-content-center">
     {{#each posts as |post|}}
       {{> post-info post}}
     {{/each}}

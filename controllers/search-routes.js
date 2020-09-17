@@ -2,7 +2,6 @@ const router = require("express").Router();
 const axios = require("axios");
 
 router.get('/:drink', async (req, res) => {
-    console.log("searching for " + req.params.drink);
     try{
         // Takes appended search value and calls the API
         const drinkResponse = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + req.params.drink);
@@ -14,7 +13,6 @@ router.get('/:drink', async (req, res) => {
             loggedIn: true
         });
     } catch (err) {
-        console.log(err);
         res.status(500).json(err);
     }
 });

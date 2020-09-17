@@ -46,7 +46,6 @@ router.post('/', async (req, res) => {
         req.session.user_id = id;
         req.session.username = username;
         req.session.loggedIn = true;
-        console.log("before redirect:", req.session)
         req.session.save(() => {
             res.json(
                 {
@@ -92,19 +91,8 @@ router.post('/login', async (req, res) => {
         req.session.username = userData.username;
         req.session.loggedIn = true;
         // If user found then save info into session cookie and set user to loggedIn
-        req.session.save(() => {
-             console.log(userData);
-            res.json(
-                {
-                    user: userData,
-                    message: 'You are now logged in!'
-                }
-            );
-        });
-       
-        // JSON the userData
-        res.json(userData);
-
+        req.session.save(() => {});
+        res.status(200).json(userData);
     } catch (err){
         console.log(err)
         res.status(500).json(err);

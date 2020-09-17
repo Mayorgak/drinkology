@@ -62,14 +62,14 @@ footer {
 	background-color: #2F4F4F;
 }
 
-#user-review {
+#user-review, #review-title {
 	outline: none;
 	padding: 3px 0px 3px 3px;
 	margin: 5px 1px 3px 0px;
 	border: 1px solid #DDDDDD;
 }
 
-#user-review:focus {
+#user-review:focus, #review-title:focus {
 	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
 	padding: 3px 0px 3px 3px;
 	margin: 5px 1px 3px 0px;
