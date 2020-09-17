@@ -1,21 +1,110 @@
-{{#each drinkData}}
-    <div class="card mb-3" style="max-width: 540px;">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img src="{{strDrinkThumb}}/preview" class="card-img" alt="...">
-          </div>
-          <div class="col-md-8">
-          <div class="card-header">
-            <h5 class="card-title">{{strDrink}}</h5>
-            <p class="card-text">{{strCategory}}
-              <span class="badge badge-danger">{{strAlcoholic}}</span>
-            </p>
-          </div>
-            <div class="card-body">
-              <p class="card-text">{{strInstructions}}</p>
-              <a href="/review?drinkid={{idDrink}}" class="btn">Write Review</a>
+{{!-- Allows NavBar To Stay Sticky And Moves Content Down --}}
+<style>
+    main {
+	    margin-top: 100px;
+    }
+
+    .card-title {
+      text-align: left;
+      color: #FFF5EE;
+    }
+
+    h5 {
+      text-align: left;
+    }
+
+    .card-header {
+      background-color: rgb(31, 87, 45);
+    }
+
+    #review-button {
+      font-weight: 600;
+    }
+
+    #review-button:hover {
+      background-color: #FFF5EE;
+      color: rgb(31, 87, 45);
+    }
+</style>
+
+<div class="container">
+  <h1 class="text-center">Your Search Results</h3>
+  <div class="container">
+    <div class="row row-cols-1 no-gutters">
+      {{#each drinkData}}
+        <div class="card col m-1">
+          <div class="row no-gutters">
+            {{!-- Card Image --}}
+            <div class="col-4 p-0">
+              <img src="{{strDrinkThumb}}/preview" class="card-img h-100" alt="...">
+            </div>
+            <div class="col-8">
+              {{!-- Card Header --}}
+              <div class="card-header text-left">
+                <h5 class="card-title">{{strDrink}}</h5>
+                <p class="card-text" style="color: #FFF5EE;">
+                  {{strCategory}} - 
+                  <span class="badge badge-danger">{{strAlcoholic}}</span>
+                </p>
+                <a href="/review?drinkid={{idDrink}}" class="btn btn-success" id="review-button">Write Review</a>
+              </div>
+              {{!-- Card Body --}}
+              <div class="card-body pb-0">
+                <h5>Mixing Instructions</h5>
+                <p class="card-text">{{strInstructions}}</p>
+                <h5>Ingredients</h5>
+                <ul class="mb-0">
+                    {{#if strIngredient1}}
+                    <li>{{#if strMeasure1}}{{strMeasure1}}{{/if}}{{strIngredient1}}</li>
+                    {{/if}}
+                    {{#if strIngredient2}}
+                    <li>{{#if strMeasure2}}{{strMeasure2}}{{/if}}{{strIngredient2}}</li>
+                    {{/if}}
+                    {{#if strIngredient3}}
+                    <li>{{#if strMeasure3}}{{strMeasure3}}{{/if}}{{strIngredient3}}</li>
+                    {{/if}}
+                    {{#if strIngredient4}}
+                    <li>{{#if strMeasure4}}{{strMeasure4}}{{/if}}{{strIngredient4}}</li>
+                    {{/if}}
+                    {{#if strIngredient5}}
+                    <li>{{#if strMeasure5}}{{strMeasure5}}{{/if}}{{strIngredient5}}</li>
+                    {{/if}}
+                    {{#if strIngredient6}}
+                    <li>{{#if strMeasure6}}{{strMeasure6}}{{/if}}{{strIngredient6}}</li>
+                    {{/if}}
+                    {{#if strIngredient7}}
+                    <li>{{#if strMeasure7}}{{strMeasure7}}{{/if}}{{strIngredient7}}</li>
+                    {{/if}}
+                    {{#if strIngredient8}}
+                    <li>{{#if strMeasure8}}{{strMeasure8}}{{/if}}{{strIngredient8}}</li>
+                    {{/if}}
+                    {{#if strIngredient9}}
+                    <li>{{#if strMeasure9}}{{strMeasure9}}{{/if}}{{strIngredient9}}</li>
+                    {{/if}}
+                    {{#if strIngredient10}}
+                    <li>{{#if strMeasure10}}{{strMeasure10}}{{/if}}{{strIngredient10}}</li>
+                    {{/if}}
+                    {{#if strIngredient11}}
+                    <li>{{#if strMeasure11}}{{strMeasure11}}{{/if}}{{strIngredient11}}</li>
+                    {{/if}}
+                    {{#if strIngredient12}}
+                    <li>{{#if strMeasure12}}{{strMeasure12}}{{/if}}{{strIngredient12}}</li>
+                    {{/if}}
+                    {{#if strIngredient13}}
+                    <li>{{#if strMeasure13}}{{strMeasure13}}{{/if}}{{strIngredient13}}</li>
+                    {{/if}}
+                    {{#if strIngredient14}}
+                    <li>{{#if strMeasure14}}{{strMeasure14}}{{/if}}{{strIngredient14}}</li>
+                    {{/if}}
+                    {{#if strIngredient15}}
+                    <li>{{#if strMeasure15}}{{strMeasure15}}{{/if}}{{strIngredient15}}</li>
+                    {{/if}}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-{{/each}}
+      {{/each}}
+    </div>
+  </div>
+</div>

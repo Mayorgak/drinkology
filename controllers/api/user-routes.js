@@ -34,7 +34,6 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-    console.log(req.body);
     try {
         const userData = await User.create(
             {
@@ -43,8 +42,18 @@ router.post('/', async (req, res) => {
                 password: req.body.password
             }
         );
-        console.log(userData);
-        res.json(userData);
+        
+        res.session.user_id = userData.id;
+        req.session.username = userData.username;
+        req.session.loggedIn = true;
+        req.session.save(() => {
+           res.json(
+               {
+                   user: userData,
+                   message: 'You are now logged in!'
+               }
+           );
+       });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -53,7 +62,6 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     try{
-        console.log(req.body);
         // Find the user in the DB
         const userData = await User.findOne(
             {
