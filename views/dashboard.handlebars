@@ -42,11 +42,9 @@
 <!-- Card section -->
 {{#if posts.length}}
 <div class="d-flex py-5 bg-light justify-content-center" id="card-container">
-  <div class="row row-col-2">
     {{#each posts as |post|}}
       {{> post-info post}}
     {{/each}}
-  </div>
 </div>
 {{/if}}
 
