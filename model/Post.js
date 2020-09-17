@@ -15,12 +15,9 @@ Post.init(
         type: DataTypes.STRING,
         allowNull: false
       },
-      post_url: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          isURL: true
-        }
+      review: {
+        type: DataTypes.STRING(2000),
+        allowNull: false
       },
       user_id: {
         type: DataTypes.INTEGER,
@@ -28,6 +25,30 @@ Post.init(
           model: 'user',
           key: 'id'
         }
+      },
+      drink_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
+      drink_name: {
+          type: DataTypes.STRING,
+          allowNull: false
+      },
+      alcohol_content: {
+          type: DataTypes.STRING,
+          allowNull: false
+      },
+      drink_instructions: {
+          type: DataTypes.STRING(5000),
+          allowNull: false
+      },
+      drink_image: {
+          type: DataTypes.STRING,
+          allowNull: false
+      },
+      drink_category: {
+          type: DataTypes.STRING,
+          allowNull: false
       }
     },
     {

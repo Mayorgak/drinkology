@@ -1,0 +1,115 @@
+
+
+* {
+	margin: 0;
+	padding: 0;
+	user-select :none;
+}
+
+body {
+	background :#e9eaea;
+	font-family: "roboto", sans-serif;
+  background-image: url(../images/cocktail4.jpeg);
+  background-size: cover;
+}
+
+.form-container {
+  
+min-height: 100vh; 
+display: flex;
+justify-content: center;
+align-items: center;
+  
+
+	
+}
+
+.signup,
+.login {
+	width :50%;
+	background : #fff;
+	height : 60px;
+	float: left; 
+	text-align : center;
+	line-height: 60px;
+	cursor: pointer;
+	text-transform: uppercase;
+
+
+}
+
+.signup-form ,
+.login-form 
+{
+  background: #fff;
+  padding: 40px;
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+  height: 400px;
+  opacity: 90%;
+}
+
+.input{
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border: 2px solid #e9eaea;
+  color: #3e3e40;
+  font-size: 14px;
+  outline: none;
+  transform: all 0.5s ease;
+}
+
+input:focus{
+  border: 2px solid #2F4F4F;
+}
+
+.btn{
+  width: 100%;
+  background: #2F4F4F;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+
+
+
+@media (max-width: 768px) {
+  
+
+}
+
+
+
+@media (max-width: 576px) {
+
+}
+
+@media (max-width: 375px) {
+
+.container {
+width : 4200px;
+ margin: 70px auto;
+margin-top : -25%; 
+
+   
+
+	
+}
+  
+@media only screen and (max-width: 600px) {
+  
+}
+
+
+
+

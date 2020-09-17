@@ -5,40 +5,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drinkology</title>
+ 
+
+  {{#each css}}
+        <link rel="stylesheet" href="/stylesheets/style.css">
+    {{/each}}
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+  
 </head>
 
 <body>
   <div>
   <header>
-    <h1>
+  <!--Navbar -->
+    <nav class="navbar navbar-light fixed-top" style="background-color: #2F4F4F;">
+      <h1> 
       <a class="title" href="/">Drinkology</a>
     </h1>
-    <nav>
       {{#if loggedIn}}
       <a href="/dashboard">dashboard</a>
-      <a id="logout" class="btn-no-style">logout</a>
+      <a id="logout" href="/logout" class="btn-no-style">logout</a>
       {{else}}
-      <a href="/login">login</a>
+      <a id="login" href="/login">login</a>
       {{/if}}
-    </nav>
-    
+      </nav>
   </header>
+
     <main class="content">
-      {{{ body }}}
+     {{{ body }}}
     </main>
-    <footer class="footer">
-      Thanks for visiting!
+
+  <!--Footer -->
+   <footer  class="container-fluid container-fluid text-center text-md-left  fixed-bottom">
+    <p id="copyright" >&copy; Drinkology 2020</p>
     </footer>
   </div>
 
-{{#if loggedIn}}
-<script src="/javascript/logout.js"></script>
-{{/if}}
-
-<script src="/javascript/dashboard.js"></script>
+  {{#if loggedIn}}    
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
