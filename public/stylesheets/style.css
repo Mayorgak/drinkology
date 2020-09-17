@@ -12,16 +12,16 @@ h1, h5 {
 
 }
 
-
 a {
 	text-decoration: none !important;
-
-
 }
+.content {
+  flex: 1 0 auto;
+}
+
  .title , #login , #copright ,#copyright {
 	color: #FFF5EE;
 	text-decoration: none;
-	
 }
 
 
@@ -71,6 +71,7 @@ footer {
 	font-size :40px;
 }
 }
+
 @media (max-width: 576px) {
 	h3 {
 		font-size :30px;
@@ -99,7 +100,6 @@ footer {
   h1 {
 	font-size: 30px !important;
   }
-  
   .jumbotron {
 		 background-image:  linear-gradient(rgba(255,255,255,0.10), rgba(255,255,255,0.5)),url('../images/cocktail4.jpeg');
 		 background-size: cover;
