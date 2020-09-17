@@ -12,10 +12,6 @@ router.get("/", async (req, res) => {
       }
     ]
   });
-  
-  const posts = postData.map(post => post.get({plain: true}));
-  console.log(posts);
-
   if(postData.length === 0) {
     console.log('No Post Data Found')
     res.render("dashboard", {
@@ -23,6 +19,7 @@ router.get("/", async (req, res) => {
       style: "dashboard.css"
     });
   } else {
+    const posts = postData.map(post => post.get({plain: true}));
     res.render("dashboard", {
       posts,
       loggedIn: true,

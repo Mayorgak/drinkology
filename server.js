@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 //sets up direct access to webpage
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.engine('handlebars', exphbs({defautlLayout:"main"}));
+app.engine('handlebars', exphbs({defautlLayout:"main"}));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 

@@ -7,7 +7,6 @@ const login = document.querySelector("#login-redirect");
 
 
 async function signupFormHandler(event) {
-  console.log("submited");
   event.preventDefault();
 
   const username = document.querySelector("#username-signup").value.trim();
@@ -26,7 +25,7 @@ async function signupFormHandler(event) {
     });
     console.log(response);
     if (response.ok) {
-      document.location.replace("/dashboard");
+      window.location.replace("/dashboard");
     } else {
       alert(response.statusText);
     }
