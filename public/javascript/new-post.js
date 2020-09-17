@@ -5,18 +5,28 @@ const reviewTitleEl = document.querySelector("#review-title");
 
 
 const reviewHandler = async function (event) {
-    // Get The Drinks ID
-    const drinkId = drinkContainerEl.getAttribute("data-drinkid");
-    fetch("/api/post-routes/", {
-        method: "post",
-        body: JSON.stringify({
-            user_review: userReviewEl.value,
-            drink_id: drinkId,
-            review_title: reviewTitleEl.value
-        }),
-        headers: {"Content-Type": "application/json"}
-    })
-    .catch((err) => console.log(err));
+    event.preventDefault();
+    try {
+        // Get The Drinks ID
+        const drinkId = drinkContainerEl.getAttribute("data-drinkid");
+        const response = await fetch("/api/posts/", {
+            method: "post",
+            body: JSON.stringify({
+                user_review: userReviewEl.value,
+                drink_id: drinkId,
+                review_title: reviewTitleEl.value
+            }),
+            headers: {"Content-Type": "application/json"}
+        })
+    
+        if(response.ok) {
+            document.location.replace('/dashboard');
+        } else {
+            alert(response.statusText);
+        }
+    } catch(err){  
+        console.log(err);
+    }
 }
 
 submitButton.addEventListener("click", reviewHandler);

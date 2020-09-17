@@ -34,7 +34,6 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-    console.log(req.body);
     try {
         const userData = await User.create(
             {
@@ -43,8 +42,20 @@ router.post('/', async (req, res) => {
                 password: req.body.password
             }
         );
-        console.log(userData);
-        res.json(userData);
+        const { id, username } = userData;
+        console.log(id);
+        console.log(username)
+        res.session.user_id = id;
+        req.session.username = username;
+        req.session.loggedIn = true;
+        req.session.save(() => {
+            res.json(
+                {
+                    user: userData,
+                    message: 'You are now logged in!'
+                }
+            );
+       });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -53,7 +64,6 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     try{
-        console.log(req.body);
         // Find the user in the DB
         const userData = await User.findOne(
             {
@@ -104,11 +114,6 @@ router.post('/login', async (req, res) => {
 
 router.post('/logout', (req, res) =>{
     if (req.session.loggedIn) {
-        res.json(
-            {
-                message: 'Logging out..'
-            }
-        );
         req.session.destroy(() => {
             res.status(204).end();
         });
