@@ -34,7 +34,7 @@ router.post('/', withAuth, async (req, res) => {
             {
                 title: review_title,
                 review: user_review,
-                // user_id: req.session.user_id,
+                user_id: req.session.user_id,
                 drink_id: drink.idDrink,
                 drink_name: drink.strDrink,
                 alcohol_content: drink.strAlcoholic,
@@ -43,6 +43,7 @@ router.post('/', withAuth, async (req, res) => {
                 drink_category: drink.strCategory
             }
         );
+        res.json(newPost);
     } catch (err) {
         res.status(500).json(err)
     }

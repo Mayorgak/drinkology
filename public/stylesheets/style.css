@@ -11,12 +11,9 @@ h1, h5 {
 a {
 	text-decoration: none !important;
 }
-<<<<<<< HEAD
-=======
 .content {
   flex: 1 0 auto;
 }
->>>>>>> 1f2c4b16979465257b6a6a7cd873784474e55f99
 
  .title , #login , #copright ,#copyright {
 	color: #FFF5EE;
