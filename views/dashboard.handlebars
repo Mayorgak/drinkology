@@ -1,5 +1,29 @@
 <link rel="stylesheet" href="stylesheets/{{style}}">
 
+<style>
+  .album {
+    margin-bottom: 100px;
+  }
+
+  #card-container {
+    margin-bottom: 100px;
+  }
+
+  .card-title {
+    text-align: left;
+    color: #FFF5EE;
+    margin-bottom: 0;
+  }
+
+  h5 {
+    text-align: left;
+  }
+
+  .card-header {
+    background-color: rgb(31, 87, 45);
+  }
+</style>
+
 <main role="main">
   <section class="dashboard-jumbotron text-center">
     <div class="dashboard-container">
@@ -14,8 +38,17 @@
       </div>
     </div>
   </section>
-<!-- Card section -->
 
+<!-- Card section -->
+{{#if posts.length}}
+<div class="d-flex py-5 bg-light justify-content-center" id="card-container">
+  <div class="row row-col-2">
+    {{#each posts as |post|}}
+      {{> post-info post}}
+    {{/each}}
+  </div>
+</div>
+{{/if}}
 
 <script src="/javascript/dashboard.js"></script>
 
