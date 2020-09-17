@@ -1,17 +1,17 @@
 # Drinkology :tropical_drink:
 
 ## Description 
-Drinkology was created to allow users to look up cocktail receipes and master the art of mixology in the comfort of their own home.
-Members are able to sign in and save receipes to their account and add comments to the blog. 
+Drinkology was created to allow end users to look up cocktail recipes, and master the art of mixology in the comfort of their own home.
+Members are able to sign in,save receipes to their account and leave reviews.
 
 ---
 
 ## User Story 
   ```bash
 AS A beverage consumer. 
-I WANT to be able to look up cocktail receipes to make while stuck at home during this pandemic. 
-I WANT to have the option to save the receipes and comment on the blog. 
-SO THAT I can have a place to get inspired, store my drink receipes and leave comments for other members to view. 
+I WANT to be able to look up cocktail recipes to make while stuck at home during this pandemic. 
+I WANT to have the option to save the recipes and comment on the blog. 
+SO THAT I can have a place to get inspired, store my drink recipes and leave reviews for other members to view. 
  ```
 
 ---
