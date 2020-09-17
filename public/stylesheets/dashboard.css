@@ -4,10 +4,44 @@
     background-image: url(../images/cocktail2.jpeg);
 }
 
-h1 {
-  color: #FFF5EE;
+h1, .lead-text  {
+  color: rgb(207, 207, 204);
+  
+
 }
 
+h1 {
+  font-size : 300% ; 
+}
+
+#dashboard, #logout {
+ color: rgb(207, 207, 204);
+ 
+}
+
+
+#drink-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+
+#dashboard:hover , #logout:hover {
+  color : rgb(207, 207, 204);
+}
+
+a:hover {
+  color : lightslategray;
+}
+
+.box {
+  width: 50%;
+  height: 100%;
+}
 .dashboard-container {
 min-height: 100vh; 
 display: flex;

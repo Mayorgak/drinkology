@@ -12,9 +12,27 @@ h1, h5 {
 
 }
 
+/* /* #dashboard , 
+#logout  { */
+	/* margin-left: -7px; */
+	/* display: flex; */
+	/* justify-content: flex-end; */ 
+
+
+
+}
+
+#dashboard , 
+#logout {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 
 a {
 	text-decoration: none !important;
+	color: #FFF5EE ;
+	
 
 
 }
@@ -38,7 +56,6 @@ a {
 }
 
 .container {
-	/* padding-top: 30%; */
 min-height: 100vh; 
 display: flex;
 justify-content: center;
