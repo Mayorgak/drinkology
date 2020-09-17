@@ -1,9 +1,21 @@
-<article class="post">
-  <div class="title">
-      <h4>{{title}}</h4>
+<div class="card col-5 m-2 p-0" data-drinkid="{{idDrink}}" id="drink-container">
+  <div class="row no-gutters">
+    {{!-- Card Image --}}
+    <div class="col-4 p-0">
+      <img src="{{drink_image}}/preview" class="card-img h-100" alt="...">
+    </div>
+    <div class="col-8">
+      {{!-- Card Header --}}
+      <div class="card-header text-left">
+        <h5 class="card-title">Review Title: {{title}}</h5>
+        <p class="card-title">Drink Name: {{drink_name}}</p>
+        <p class="card-title">Created By {{user.username}} on {{format_date createdAt}}</p>
+      </div>
+      {{!-- Card Body --}}
+      <div class="card-body pb-0">
+        <h5>{{user.username}}'s Review</h5>
+        <p class="card-text">{{review}}</p>
+      </div>
+    </div>
   </div>
-  <div class="meta">
-    {{user.username}} on {{format_date created_at}}
-    <a href="/post/{{id}}"></a>
-  </div>
-</article>
+</div>

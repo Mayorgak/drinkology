@@ -12,7 +12,7 @@ Post.init(
         autoIncrement: true
       },
       title: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(50),
         allowNull: false
       },
       review: {
@@ -21,6 +21,7 @@ Post.init(
       },
       user_id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
           model: 'user',
           key: 'id'

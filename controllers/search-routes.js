@@ -12,7 +12,7 @@ router.get('/:drink', async (req, res) => {
         res.render('search-results', {
             drinkData,
             loggedIn: true
-        })
+        });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

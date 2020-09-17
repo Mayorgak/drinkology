@@ -2,6 +2,7 @@ const express = require('express');
 const routes = require('./controllers');
 const path = require('path');
 const session = require('express-session');
+const exphbs = require('express-handlebars');
 
 const app = express(); 
 const PORT = process.env.PORT || 3001;
@@ -21,16 +22,17 @@ const sess = {
 
 app.use(session(sess));
 
+const helpers = require('./utils/helpers');
+const hbs = exphbs.create({ helpers });
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //sets up direct access to webpage
 app.use(express.static(path.join(__dirname, 'public')));
 
-//handlebars
-const exphbs = require('express-handlebars');
-
-app.engine('handlebars', exphbs({defautlLayout:"main"}));
+// app.engine('handlebars', exphbs({defautlLayout:"main"}));
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 
@@ -39,5 +41,5 @@ app.use(routes);
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
 });

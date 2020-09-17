@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const User = require('../../model/User');
+const {User} = require('../../model');
 
 router.get('/', async (req, res) => {
     try{
@@ -34,7 +34,6 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-    console.log(req.body);
     try {
         const userData = await User.create(
             {
@@ -43,8 +42,19 @@ router.post('/', async (req, res) => {
                 password: req.body.password
             }
         );
-        console.log(userData);
-        res.json(userData);
+        const { id, username } = userData;
+        req.session.user_id = id;
+        req.session.username = username;
+        req.session.loggedIn = true;
+        console.log("before redirect:", req.session)
+        req.session.save(() => {
+            res.json(
+                {
+                    user: userData,
+                    message: 'You are now logged in!'
+                }
+            );
+       });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -53,7 +63,6 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     try{
-        console.log(req.body);
         // Find the user in the DB
         const userData = await User.findOne(
             {
@@ -64,7 +73,7 @@ router.post('/login', async (req, res) => {
         );
         // If not in DB the notify user
         if (!userData) {
-            req.status(400).json(
+            res.status(400).json(
                 {
                     message: 'No user account found!'
                 }
@@ -104,11 +113,6 @@ router.post('/login', async (req, res) => {
 
 router.post('/logout', (req, res) =>{
     if (req.session.loggedIn) {
-        res.json(
-            {
-                message: 'Logging out..'
-            }
-        );
         req.session.destroy(() => {
             res.status(204).end();
         });

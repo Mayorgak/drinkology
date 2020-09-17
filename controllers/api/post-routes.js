@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const Post = require('../../model/Post');
+const {Post} = require('../../model');
 const withAuth = require('../../utils/authorization');
+const axios = require('axios');
 
 router.get('/', async (req, res) => {
     try{
@@ -43,13 +44,7 @@ router.post('/', withAuth, async (req, res) => {
                 drink_category: drink.strCategory
             }
         );
-
-        const getPostData = await Post.findAll();
-
-        res.render('dashboard', {
-            getPostData,
-            loggedIn: true
-        });
+        res.json(newPost);
     } catch (err) {
         res.status(500).json(err)
     }
