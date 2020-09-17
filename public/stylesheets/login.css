@@ -12,16 +12,11 @@ body {
 }
 
 .form-container {
-  
-min-height: 100vh; 
-display: flex;
-justify-content: center;
-align-items: center;
-	
+  min-height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-
-
 
 .signup,
 .login {
@@ -33,13 +28,10 @@ align-items: center;
 	line-height: 60px;
 	cursor: pointer;
 	text-transform: uppercase;
-
-
 }
 
 .signup-form ,
-.login-form 
-{
+.login-form {
   background: #fff;
   padding: 40px;
   clear: both;
@@ -49,7 +41,7 @@ align-items: center;
   opacity: 90%;
 }
 
-.input{
+.input {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
@@ -61,7 +53,7 @@ align-items: center;
   transform: all 0.5s ease;
 }
 
-input:focus{
+input:focus {
   border: 2px solid #2F4F4F;
 }
 
@@ -82,19 +74,13 @@ input:focus{
 
 
 @media (max-width: 375px) {
-
-.container {
-width : 4200px;
- margin: 70px auto;
-margin-top : -25%; 
-
-  	
+  .container {
+  width : 4200px;
+  margin: 70px auto;
+  margin-top : -25%; 
+  }
 }
   
 @media only screen and (max-width: 600px) {
   
 }
-
-
-
-

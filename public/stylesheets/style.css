@@ -76,6 +76,14 @@ footer {
 	border: 1px solid rgba(81, 203, 238, 1);
 }
 
+#dashboard, #logout {
+	color: rgb(207, 207, 204);
+}
+
+#dashboard:hover , #logout:hover {
+	color : rgb(207, 207, 204);
+}
+
 @media (max-width: 768px) {
 	h3 {
 		font-size :40px;

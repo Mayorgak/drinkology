@@ -1,11 +1,11 @@
 const drinkFormEl = document.querySelector("#drink-form");
-const drinkInputEL = document.querySelector("#drink-search");
+const drinkInputEl = document.getElementById("drink-search");
 const resultsDivEl = document.querySelector("#search-results");
 
 const searchHandler = (event) => {
   event.preventDefault();
-    // Takes the value of the searched drink
-  const drink = drinkInputEL.value;
+  // Takes the value of the searched drink
+  const drink = drinkInputEl.value.trim();
   // Appends to URL which executes API call
   window.location = `/search/${drink}`
 };

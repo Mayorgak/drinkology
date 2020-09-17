@@ -1,4 +1,4 @@
-const logoutBTN = document.querySelector("#logout");
+const logoutBtn = document.querySelector("#logout");
 
 async function logout() {
   const response = await fetch('/api/user/logout', {
@@ -13,4 +13,4 @@ async function logout() {
   }
 }
 
-  logoutBtn.addEventListener("click", loginFormHandler);
+  logoutBtn.addEventListener("click", logout);

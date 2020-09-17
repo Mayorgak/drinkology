@@ -10,4 +10,14 @@ Post.belongsTo(User, {
     onDelete: 'SET NULL'
 });
 
+User.belongsToMany(Post, {
+    foreignKey: 'user_id',
+    onDelete: 'SET NULL'
+});
+
+User.belongsTo(Post, {
+    foreignKey: 'user_id',
+    onDelete: 'SET NULL'
+});
+
 module.exports = {Post, User};

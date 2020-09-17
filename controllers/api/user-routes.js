@@ -45,7 +45,7 @@ router.post('/', async (req, res) => {
         const { id, username } = userData;
         console.log(id);
         console.log(username)
-        res.session.user_id = id;
+        req.session.user_id = id;
         req.session.username = username;
         req.session.loggedIn = true;
         req.session.save(() => {
@@ -74,7 +74,7 @@ router.post('/login', async (req, res) => {
         );
         // If not in DB the notify user
         if (!userData) {
-            req.status(400).json(
+            res.status(400).json(
                 {
                     message: 'No user account found!'
                 }
