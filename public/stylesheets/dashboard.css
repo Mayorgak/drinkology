@@ -34,9 +34,15 @@ h1 {
   color : rgb(207, 207, 204);
 }
 
-a:hover {
+.title:hover:hover {
   color : lightslategray;
 }
+
+#logout:hover ,
+#dashboard:hover {
+  color : lightslategray;
+}
+
 
 .box {
   width: 50%;

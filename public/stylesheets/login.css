@@ -19,10 +19,11 @@ min-height: 100vh;
 display: flex;
 justify-content: center;
 align-items: center;
-  
-
 	
 }
+
+
+
 
 .signup,
 .login {
@@ -82,18 +83,6 @@ input:focus{
 
 
 
-
-@media (max-width: 768px) {
-  
-
-}
-
-
-
-@media (max-width: 576px) {
-
-}
-
 @media (max-width: 375px) {
 
 .container {
@@ -101,9 +90,7 @@ width : 4200px;
  margin: 70px auto;
 margin-top : -25%; 
 
-   
-
-	
+  	
 }
   
 @media only screen and (max-width: 600px) {

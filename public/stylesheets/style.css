@@ -7,7 +7,7 @@ body {
 
 h1, h5 {
 	font-family: 'Fjalla One', sans-serif;
-	color: rgb(31, 87, 45);
+	color: #2F4F4F;
 	text-align: center;
 
 }
@@ -18,16 +18,19 @@ h1, h5 {
 	
 
 
-
-
-
 a {
 	text-decoration: none !important;
 	color: #FFF5EE ;
-	
-
-
 }
+
+#login:hover ,
+#title:hover {
+  color : lightslategray;
+}
+
+
+
+
  .title , #login , #copright ,#copyright {
 	color: #FFF5EE;
 	text-decoration: none;

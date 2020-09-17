@@ -42,9 +42,5 @@ async function signupFormHandler(event) {
    
   });
 
-  // login.addEventListener("click", function () {
-  //    loginForm.style.display = "block";
-  //    signupForm.style.display = "none";
-  // });
-
+  
 
