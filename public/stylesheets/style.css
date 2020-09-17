@@ -12,22 +12,14 @@ h1, h5 {
 
 }
 
-/* /* #dashboard , 
-#logout  { */
-	/* margin-left: -7px; */
-	/* display: flex; */
-	/* justify-content: flex-end; */ 
+ #dashboard { 
+	margin-right: 8px; 
+ }
+	
 
 
 
-}
 
-#dashboard , 
-#logout {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
 
 a {
 	text-decoration: none !important;
