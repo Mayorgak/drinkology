@@ -41,8 +41,8 @@
 
 <!-- Card section -->
 {{#if posts.length}}
-<div class="d-flex py-3 bg-light" id="card-container">
-  <div class="row justify-content-center">
+<div class="d-flex justify-content-center py-3 bg-light" id="card-container">
+  <div class="row row-col-2 w-100 justify-content-center">
     {{#each posts as |post|}}
       {{> post-info post}}
     {{/each}}
@@ -51,4 +51,3 @@
 {{/if}}
 
 <script src="/javascript/dashboard.js"></script>
-

@@ -1,0 +1,70 @@
+<style>
+    main {
+        margin-top: 100px;
+        margin-bottom: 150px
+    }
+
+  .card-title {
+    text-align: left;
+    color: #FFF5EE;
+    margin-bottom: 0;
+  }
+
+  h5 {
+    text-align: left;
+  }
+
+  .card-header {
+    background-color: rgb(31, 87, 45);
+  }
+</style>
+
+<h1 class="text-center col">My Posts</h1>
+<div class="d-flex justify-content-center pt-0 mt-2 mx-0" id="page-container">
+    <!-- Card section -->
+    {{#if posts.length}}
+    <div class="py-3 w-100">
+        <div class="row w-100 row-col-2 justify-content-center">
+            {{!-- each template --}}
+            {{#each posts as |post|}}
+            <div class="card col-lg-5 col-md-6 m-2 p-0 drink-container" data-drinkid="{{drink_id}}" data-postid="{{post.id}}">
+                <div class="row no-gutters">
+                    {{!-- Card Image --}}
+                    <div class="col-4 p-0">
+                    <img src="{{drink_image}}/preview" class="card-img h-100" alt="...">
+                    </div>
+                    <div class="col-8">
+                        {{!-- Card Header --}}
+                        <div class="card-header text-left">
+                            <h5 class="card-title">Review Title: {{title}}</h5>
+                            <p class="card-title">Drink Name: {{drink_name}}</p>
+                            <p class="card-title">Created By {{user.username}} on {{format_date createdAt}}</p>
+                        </div>
+                        {{!-- Card Body --}}
+                        <div class="card-body pb-0">
+                            <h5>{{user.username}}'s Review</h5>
+                            <p class="card-text">{{review}}</p>
+                            {{!-- Update Buttons --}}
+                            <button class="btn btn-info edit-button">Edit</button>
+                            <button class="btn btn-danger delete-button">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    {{else}}
+    <div class="row">
+    <h3 class="text-center col-12">Please search for a new cocktail to leave a review!</h3>
+        <form class="form-inline col-12 active-pink-3 active-pink-4 justify-content-center" id="drink-form">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+            aria-label="Search" id="drink-search">
+        </form>
+    </div>
+    <script src="/javascript/dashboard.js"></script>
+    {{/if}}
+</div>
+
+<script src="/javascript/my-posts.js"></script>

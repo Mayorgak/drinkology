@@ -21,11 +21,6 @@ h1 {
   color : lightslategray;
 }
 
-#logout:hover ,
-#dashboard:hover {
-  color : lightslategray;
-}
-
 .box {
   width: 50%;
   height: 100%;

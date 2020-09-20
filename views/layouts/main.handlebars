@@ -22,10 +22,11 @@
     </h1>
     <div>
       {{#if loggedIn}}
-      <a id="dashboard"  href="/dashboard">Dashboard</a>
-      <a id="logout" href="/logout" class="btn-no-style">Logout</a>
+      <a id="dashboard" class="link-style" href="/dashboard">Dashboard</a>
+      <a id="myPosts" class="link-style" href="/my-posts">My Posts</a>
+      <a id="logout" class="link-style" href="/logout" class="btn-no-style">Logout</a>
       {{else}}
-      <a id="login" href="/login">Login</a>
+      <a id="login" class="link-style" href="/login">Login</a>
       {{/if}}
       </nav>
       </div>
