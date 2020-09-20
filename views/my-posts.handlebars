@@ -19,12 +19,14 @@
   }
 </style>
 
-<div class="container justify-content-center pt-0 mt-2" id="page-container">
-    <h1 class="text-center">My Posts</h1>
+<div class="d-flex justify-content-center pt-0 mt-2 mx-0" id="page-container">
+    <div class="row">
+        <h1 class="text-center col">My Posts</h1>
+    </div>
     <!-- Card section -->
     {{#if posts.length}}
-    <div class="d-flex py-3 bg-light justify-content-center">
-        <div class="row">
+    <div class="py-3 w-100">
+        <div class="row w-100">
             {{!-- each template --}}
             {{#each posts as |post|}}
             <div class="card col-lg-5 col-md-6 m-2 p-0 drink-container" data-drinkid="{{drink_id}}" data-postid="{{post.id}}">
