@@ -1,36 +1,41 @@
-const postId = document.querySelector('input[name="post-id"]').value;
-
-const editFormHandler = async function (event) {
-  event.preventDefault();
-
-  const title = document.querySelector('input[name="post-title"]').value;
-  const body = document.querySelector('textarea[name="post-body"]').value;
-
-  await fetch(`/api/post/${postId}`, {
-    method: "PUT",
-    body: JSON.stringify({
-      title,
-      body,
-    }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  document.location.replace("/dashboard");
+const updatePost = async (event) => {
+  try{
+    const postEl = event.target;
+    const drinkId = postEl.closest(".drink-container").getAttribute("data-drinkid");
+    const postId = postEl.closest(".drink-container").getAttribute("data-postid");
+    const updatePost = await fetch(`/api/posts/${postId}`, {
+      method: "PUT",
+      body: JSON.stringify({
+        title: postTitleEl.value.trim(),
+        review: reviewTextEl.value.trim(),
+        drinkId
+      }),
+      headers: { "Content-Type": "application/json" }
+    });
+    window.location = '/my-posts'
+  } catch(err) {
+    console.log(err);
+  }
 };
 
-const deleteClickHandler = async function () {
-  await fetch(`/api/post/${postId}`, {
-    method: "DELETE",
-  });
 
-  document.location.replace("/dashboard");
+const deletePost = async (event) => {
+  const postEl = event.target;
+  const postId = postEl.closest(".drink-container").getAttribute("data-postid");
+  const response = await fetch(`/api/posts/${postId}`, {
+    method: "DELETE"
+  });
+if (response.ok) {
+    postEl.closest(".drink-container").remove();
+} else {
+    alert(response.statusText);
+}
 };
 
-document
-  .querySelector("#edit-post-form")
-  .addEventListener("submit", editFormHandler);
-document
-  .querySelector("#delete-btn")
-  .addEventListener("click", deleteClickHandler);
+const updateButton = document.querySelector("#update-button");
+const deleteButton = document.querySelector("#delete-button");
+const postTitleEl = document.querySelector("#review-title");
+const reviewTextEl = document.querySelector("#review-text");
+
+updateButton.addEventListener("click", updatePost);
+deleteButton.addEventListener("click", deletePost);

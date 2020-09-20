@@ -13,12 +13,11 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
         const postData = await Post.findOne({
             where: req.params
         });
-
         res.json(postData);
     } catch(err) {
         res.status(500).json(err)
@@ -33,8 +32,8 @@ router.post('/', withAuth, async (req, res) => {
 
         const newPost = await Post.create(
             {
-                title: review_title,
-                review: user_review,
+                title: review_title.trim(),
+                review: user_review.trim(),
                 user_id: req.session.user_id,
                 drink_id: drink.idDrink,
                 drink_name: drink.strDrink,
@@ -52,9 +51,11 @@ router.post('/', withAuth, async (req, res) => {
 
 router.put('/:id', withAuth, async (req, res) => {
     try{
+        const { review, title } = req.body;
         const postData = await Post.update(
             {
-                title: req.body.title
+                title,
+                review
             },
             {
                 where: req.params

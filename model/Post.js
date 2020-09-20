@@ -16,7 +16,7 @@ Post.init(
         allowNull: false
       },
       review: {
-        type: DataTypes.STRING(2000),
+        type: DataTypes.STRING(200),
         allowNull: false
       },
       user_id: {

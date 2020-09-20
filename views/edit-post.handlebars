@@ -1,20 +1,41 @@
-<div class="post card">
-  <div class="card-header">
-    <h2>Edit Post</h2>
-  </div>
-  <form id="edit-post-form" class="card-body">
-    <input type="hidden" name="post-id" value="{{post.id}}" />
+<style>
+    main {
+      margin-top: 100px;
+    }
+</style>
 
-    <label class="form-label" for="post-title">Title</label>
-    <input type="text" name="post-title" value="{{post.title}}" class="form-input" />
-
-    <label class="form-label" for="post-body">Content</label>
-    <textarea name="post-body" class="form-input">{{post.body}}</textarea>
-
-    <button type="submit" class="btn">Update</button>
-
-    <button type="button" id="delete-btn" class="btn">Delete</button>
-  </form>
-</div>
+<div class="container justify-content-center pt-0 mt-2" id="page-container">
+    <h1 class="text-center">Edit Your Post</h1>
+    <!-- Card section -->
+    <div class="d-flex py-3 bg-light justify-content-center">
+        <div class="row">
+            {{!-- each template --}}
+            {{#if post}}
+            <div class="card col m-2 p-0 drink-container" data-drinkid="{{post.drink_id}}" data-postid="{{post.id}}">
+                <div class="row no-gutters">
+                    {{!-- Card Image --}}
+                    <div class="col-4 p-0">
+                    <img src="{{post.drink_image}}/preview" class="card-img h-100" alt="...">
+                    </div>
+                    <div class="col-8">
+                        {{!-- Card Header --}}
+                        <div class="card-header text-left">
+                            <input type="text" value="{{post.title}}" name="review-title" id ="review-title">
+                            <p class="card-title">Drink Name: {{post.drink_name}}</p>
+                        </div>
+                        {{!-- Card Body --}}
+                        <div class="card-body pb-0">
+                            {{!-- <p class="card-text">{{review}}</p> --}}
+                            <textarea maxlength="200" name="review-text" id="review-text" cols="60" rows="10">{{post.review}}</textarea>
+                            {{!-- Update Buttons --}}
+                            <button class="btn btn-info" id="update-button">Update</button>
+                            <button class="btn btn-danger" id="delete-button">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+        </div>
+    </div>
 
 <script src="/javascript/edit.js"></script>

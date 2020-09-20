@@ -76,11 +76,11 @@ footer {
 	border: 1px solid rgba(81, 203, 238, 1);
 }
 
-#dashboard, #logout {
+#dashboard, #logout, #my-posts {
 	color: rgb(207, 207, 204);
 }
 
-#dashboard:hover , #logout:hover {
+#dashboard:hover , #logout:hover, #my-posts:hover {
 	color : rgb(207, 207, 204);
 }
 

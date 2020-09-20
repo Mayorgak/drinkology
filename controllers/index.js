@@ -15,6 +15,12 @@ router.use('/search', searchRoutes);
 const reviewRoute = require('./review');
 router.use('/review', reviewRoute);
 
+const myPostsRoutes = require('./my-posts-routes');
+router.use('/my-posts', myPostsRoutes);
+
+const editPostRoutes = require('./edit-post');
+router.use('/edit-post', editPostRoutes);
+
 router.use((req, res) => {
   res.status(404).end();
 });

@@ -1,6 +1,5 @@
 const drinkFormEl = document.querySelector("#drink-form");
 const drinkInputEl = document.getElementById("drink-search");
-const resultsDivEl = document.querySelector("#search-results");
 
 const searchHandler = (event) => {
   event.preventDefault();
