@@ -81,7 +81,7 @@ footer {
 }
 
 .link-style:hover {
-	color : rgb(207, 207, 204);
+  color : lightslategray;
 }
 
 @media (max-width: 768px) {
