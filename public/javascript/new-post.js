@@ -9,6 +9,8 @@ const reviewHandler = async function (event) {
     try {
         // Get The Drinks ID
         const drinkId = drinkContainerEl.getAttribute("data-drinkid");
+        console.log(userReviewEl)
+        console.log(reviewTitleEl)
         if(userReviewEl && reviewTitleEl) {
             const response = await fetch("/api/posts/", {
                 method: "post",
