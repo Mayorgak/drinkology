@@ -1,21 +1,34 @@
 const updatePost = async (event) => {
   try{
+    // Capture element event happened on
     const postEl = event.target;
+
+    // Find the closest containers drink and post id
     const drinkId = postEl.closest(".drink-container").getAttribute("data-drinkid");
     const postId = postEl.closest(".drink-container").getAttribute("data-postid");
-    if (reviewTextEl && postTitleEl) {
+
+    // Capture values of edited title and review
+    const title = document.querySelector("#review-title").value.trim();
+    const review = document.querySelector("#review-text").value.trim();
+
+    // If the values are NOT falsy
+    if (title && review) {
+      // Send PUT/UPDATE request to API route
       const response = await fetch(`/api/posts/${postId}`, {
         method: "PUT",
         body: JSON.stringify({
-          title: postTitleEl,
-          review: reviewTextEl,
+          title,
+          review,
           drinkId
         }),
         headers: { "Content-Type": "application/json" }
       });
+      // If PUT/UPDATE was successful
       if(response.ok) {
+        // Redirect to users posts
         window.location = '/my-posts'
       } else {
+        // Alert user of the error
         alert(response.statusText);
       }
     }
@@ -26,22 +39,33 @@ const updatePost = async (event) => {
 
 
 const deletePost = async (event) => {
-  const postEl = event.target;
-  const postId = postEl.closest(".drink-container").getAttribute("data-postid");
-  const response = await fetch(`/api/posts/${postId}`, {
-    method: "DELETE"
-  });
-if (response.ok) {
-    postEl.closest(".drink-container").remove();
-} else {
-    alert(response.statusText);
-}
+  try {
+    // Capture element event occurred on
+    const postEl = event.target;
+
+    // Get the closest containers post ID
+    const postId = postEl.closest(".drink-container").getAttribute("data-postid");
+    
+    // Send DELETE request for the post
+    const response = await fetch(`/api/posts/${postId}`, {
+      method: "DELETE"
+    });
+
+    // If the response is okay
+    if (response.ok) {
+      // Remove the element from the DOM
+      postEl.closest(".drink-container").remove();
+    } else {
+      // Alert user of the error
+      alert(response.statusText);
+    }
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 const updateButton = document.querySelector("#update-button");
 const deleteButton = document.querySelector("#delete-button");
-let postTitleEl = document.querySelector("#review-title");
-let reviewTextEl = document.querySelector("#review-text");
 
 updateButton.addEventListener("click", updatePost);
 deleteButton.addEventListener("click", deletePost);
