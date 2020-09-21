@@ -8,8 +8,6 @@ const handleClick = (event) => {
 
     while (targetElement) {
         if (targetElement.nodeName === "BUTTON" && /edit-button/.test(targetElement.className)) {
-            console.log(event)
-            console.log(targetElement)
             editButton(drinkId, postId)
             break;
         } else if (targetElement.nodeName === "BUTTON" && /delete-button/.test(targetElement.className)) {
@@ -38,9 +36,11 @@ const deleteButton = async (event, drink, post) => {
                 post
             }
         });
-        console.log(response);
+        // If Server Response Is Okay
         if (response.ok) {
+            // Set Variable To The Element The Event Happened On
             const postEl = event.target;
+            // Remove Closest Drink Container Element
             postEl.closest(".drink-container").remove();
         } else {
             alert(response.statusText);

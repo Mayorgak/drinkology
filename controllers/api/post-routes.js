@@ -32,8 +32,8 @@ router.post('/', withAuth, async (req, res) => {
 
         const newPost = await Post.create(
             {
-                title: review_title.trim(),
-                review: user_review.trim(),
+                title: review_title,
+                review: user_review,
                 user_id: req.session.user_id,
                 drink_id: drink.idDrink,
                 drink_name: drink.strDrink,
@@ -51,7 +51,7 @@ router.post('/', withAuth, async (req, res) => {
 
 router.put('/:id', withAuth, async (req, res) => {
     try{
-        const { review, title } = req.body;
+       const { title, review, drinkID } = req.body;
         const postData = await Post.update(
             {
                 title,

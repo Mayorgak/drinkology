@@ -3,6 +3,8 @@ const updatePost = async (event) => {
     const postEl = event.target;
     const drinkId = postEl.closest(".drink-container").getAttribute("data-drinkid");
     const postId = postEl.closest(".drink-container").getAttribute("data-postid");
+    reviewTextEl = reviewTextEl.value.trim();
+    postTitleEl = postTitleEl.value.trim();
     if (reviewTextEl && postTitleEl) {
       const response = await fetch(`/api/posts/${postId}`, {
         method: "PUT",
@@ -40,8 +42,8 @@ if (response.ok) {
 
 const updateButton = document.querySelector("#update-button");
 const deleteButton = document.querySelector("#delete-button");
-const postTitleEl = document.querySelector("#review-title").value.trim();
-const reviewTextEl = document.querySelector("#review-text").value.trim();
+let postTitleEl = document.querySelector("#review-title");
+let reviewTextEl = document.querySelector("#review-text");
 
 updateButton.addEventListener("click", updatePost);
 deleteButton.addEventListener("click", deletePost);
