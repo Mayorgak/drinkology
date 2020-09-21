@@ -25,13 +25,14 @@
                     <div class="col-lg-8 col-md-4 col-sm-2">
                         {{!-- Card Header --}}
                         <div class="card-header text-left">
+                            {{!-- Review Title Element --}}
                             <input maxlength="25" type="text" value="{{post.title}}" name="review-title" id ="review-title">
                             <p class="card-title">Drink Name: {{post.drink_name}}</p>
                         </div>
                         {{!-- Card Body --}}
                         <div class="card-body pb-0">
-                            {{!-- <p class="card-text">{{review}}</p> --}}
-                            <textarea class="col-md-6 col-sm-3 " maxlength="200" name="review-text" id="review-text" cols="60" rows="10">{{post.review}}</textarea>
+                            {{!-- Review Input Element --}}
+                            <textarea class="col-md-6 col-sm-3 " maxlength="200" name="review-text" id="review-text" cols="60" rows="5">{{post.review}}</textarea>
                             {{!-- Update Buttons --}}
                             <div class="row">
                             <button class="btn btn-info col-lg-2 col-md-1 m-1" id="update-button">Update</button>
