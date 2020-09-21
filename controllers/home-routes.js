@@ -2,7 +2,13 @@ const router = require("express").Router();
 
 
 router.get("/", (req, res) => {
-  res.render("homepage");
+  if (req.session.user_id) {
+    res.render("homepage", {
+      loggedIn: true
+    });
+  } else {
+    res.render("homepage");
+  }
 });
 
 
