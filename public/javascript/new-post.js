@@ -1,16 +1,13 @@
 const submitButton = document.querySelector("#submit-review");
 const drinkContainerEl = document.querySelector("#drink-container");
-let userReviewEl = document.querySelector("#user-review");
-let reviewTitleEl = document.querySelector("#review-title");
 
-
-const reviewHandler = async function (event) {
+const reviewHandler = async (event) => {
     event.preventDefault();
     try {
         // Get The Drinks ID
         const drinkId = drinkContainerEl.getAttribute("data-drinkid");
-        userReviewEl = userReviewEl.value.trim();
-        reviewTitleEl = reviewTitleEl.value.trim();
+        const userReviewEl = document.querySelector("#user-review").value.trim();
+        const reviewTitleEl = document.querySelector("#review-title").value.trim();
         if (userReviewEl && reviewTitleEl) {
             const response = await fetch("/api/posts/", {
                 method: "post",

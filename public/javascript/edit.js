@@ -3,8 +3,6 @@ const updatePost = async (event) => {
     const postEl = event.target;
     const drinkId = postEl.closest(".drink-container").getAttribute("data-drinkid");
     const postId = postEl.closest(".drink-container").getAttribute("data-postid");
-    reviewTextEl = reviewTextEl.value.trim();
-    postTitleEl = postTitleEl.value.trim();
     if (reviewTextEl && postTitleEl) {
       const response = await fetch(`/api/posts/${postId}`, {
         method: "PUT",
