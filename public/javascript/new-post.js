@@ -1,7 +1,7 @@
 const submitButton = document.querySelector("#submit-review");
 const drinkContainerEl = document.querySelector("#drink-container");
-const userReviewEl = document.querySelector("#user-review").value.trim();
-const reviewTitleEl = document.querySelector("#review-title").value.trim();
+const userReviewEl = document.querySelector("#user-review").trim();
+const reviewTitleEl = document.querySelector("#review-title").trim();
 
 
 const reviewHandler = async function (event) {
